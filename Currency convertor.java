@@ -13,23 +13,7 @@ import com.mashape.unirest.http.HttpResponse;
 
 public class rapidapi {
 	
-	public static String symbol(String country) throws URISyntaxException, IOException, InterruptedException
-	{
-		HttpClient client =  HttpClient.newHttpClient();
-		HttpRequest httprequest =  HttpRequest.newBuilder()
-				.uri(new URI("https://siddiquie.p.rapidapi.com/api.siddiquie.net/Currency/xml.php"))
-				.header("X-RapidAPI-Key", "a8b6215eccmshf0905faa3071a06p168dabjsne610ca201b29")
-				.header("X-RapidAPI-Host", "siddiquie.p.rapidapi.com")
-				.method("GET", HttpRequest.BodyPublishers.noBody())
-				.build();
-			
-		java.net.http.HttpResponse<String> response = client.send(httprequest, BodyHandlers.ofString());
-		System.out.println(response.body());
-		
-		
-		
-		return response.body();
-	}
+	
 
 	public static void main(String[] args) {
 		try {
@@ -61,7 +45,7 @@ public class rapidapi {
 			System.out.println("\tEnter amount to convert from "+from+" to "+to+" :");
 			Float amount =scan.nextFloat();
 			Float new_amount=amount*EX;
-			System.out.println("\tconverted money :" +new_amount);
+			System.out.println("\t Money in "+to+" currency  :" +new_amount);
 		} catch (URISyntaxException e) {
 			// TODO Auto-generated catch block
 			System.out.println(e);
